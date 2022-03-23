@@ -63,7 +63,7 @@
       padding: 16px;
     }
 
-    span.psw {
+    span.pwd {
       float: right;
       padding-top: 16px;
     }
@@ -114,18 +114,18 @@
     }
 
     @-webkit-keyframes animatezoom {
-      from {-webkit-transform: scale(0)} 
+      from {-webkit-transform: scale(0)}
       to {-webkit-transform: scale(1)}
     }
   
     @keyframes animatezoom {
-      from {transform: scale(0)} 
+      from {transform: scale(0)}
       to {transform: scale(1)}
     }
 
     /* Change styles for span and cancel button on extra small screens */
     @media screen and (max-width: 300px) {
-      span.psw {
+      span.pwd {
         display: block;
         float: none;
       }
@@ -147,9 +147,10 @@
           </div>
           <div class="links">
             <a href="#about" >About</a>
-            <a href="#register" >Register</a>
+            <a href="#register"
+                onclick="document.getElementById('register').style.display='block'" style="width:auto;">Register</a>
             <a href="#signin" onclick="document.getElementById('signin').style.display='block'" style="width:auto;">Sign In</a>
-            <a href="#contact" >Contact</a>            
+            <a href="#contact" >Contact</a>
           </div>
           <div id="mobile-sidenav" class="mobile-links w3-highway-blue">
             <div class="mobile-logo" style="display: inline;">
@@ -158,7 +159,8 @@
               <a href="javascript:void(0)" class="closebtn" onclick="toggleMobileNavigation()">&times;</a>
             </div>
             <a href="#about" onclick="toggleMobileNavigation()">About Us</a>
-            <a href="#register" onclick="toggleMobileNavigation()">Register</a>
+            <a href="#register"
+                onclick="document.getElementById('register').style.display='block'" style="width:auto;">Register</a>
             <a href="#signin" onclick="document.getElementById('signin').style.display='block'" style="width:auto;">Sign In</a>
             <a href="#contact" onclick="toggleMobileNavigation()">Contact</a>
           </div>
@@ -170,31 +172,30 @@
           <p class="pre-title">Hello Students, One stop for organizing homework</p>
           <h1 class="title"> HOMEWORK<span>HELPER</span></h1>
           <p class="post-title">Begin!</p>
-          <a class="w3-button w3-round-large w3-indigo w3-hover-blue" href="#register">Register NOW</a> 
+          <a class="w3-button w3-round-large w3-indigo w3-hover-blue" href="#register" onclick="document.getElementById('register').style.display='block'" style="width:auto;">Register Here</a>
         </div>
       </div>
 
       <div class="about container w3-padding-large" id="about">
         <div class="text-one">
           <h2>About Us</h2>
-          <p>Are you a student struggling to stay organized? Do you often find it difficult to remember all your deadlines? Look no further, because HOMEWORK HELPER solves these problems by keeping all your student needs in once place! HOMEWORK HELPER is a 2-in-1 planner and notes app. Record all your homework, deadlines, and school-related obligations in the same, easily viewable calendar. Get automatic notifications for all these deadlines as early and as frequent as you want. Create notes and organize them by subject, and create as many folders within each subject as you need. With the press of a button, freely draw or annotate on your notes using your mouse or a stylus with a compatible touchscreen.</p> 
+          <p>Are you a student struggling to stay organized? Do you often find it difficult to remember all your deadlines? Look no further, because HOMEWORK HELPER solves these problems by keeping all your student needs in once place! HOMEWORK HELPER is a 2-in-1 planner and notes app. Record all your homework, deadlines, and school-related obligations in the same, easily viewable calendar. Get automatic notifications for all these deadlines as early and as frequent as you want. Create notes and organize them by subject, and create as many folders within each subject as you need. With the press of a button, freely draw or annotate on your notes using your mouse or a stylus with a compatible touchscreen.</p>
         </div>
       </div>
 
       <div class="modal" id="signin">
         <div class="text-one">
-          <form class="modal-content animate" action="/action_page.php" method="post">
+          <form class="modal-content animate" action="login_home.php" method="get">
             <div class="imgcontainer">
               <span onclick="document.getElementById('signin').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <img src="img_avatar2.png" alt="Avatar" class="avatar">
             </div>
 
             <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="emailid"><b>Username</b></label>
+              <input type="text" id="emailid" placeholder="Enter Username" name="emailid" required>
 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="pwd"><b>Password</b></label>
+              <input type="password" id="pwd" placeholder="Enter Password" name="pwd" required>
         
               <button type="submit">Login</button>
               <label>
@@ -204,7 +205,7 @@
 
             <div class="container" style="background-color:#f1f1f1">
               <button type="button" onclick="document.getElementById('signin').style.display='none'" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
+              <span class="pwd">Forgot <a href="#">password?</a></span>
             </div>
           </form>
         </div>
@@ -212,32 +213,29 @@
     
        <div class="modal" id="register">
         <div class="text-one">
-          <form class="modal-content animate" action="/action_page.php" method="post">
+          <form class="modal-content animate" action="Registration.php" method="get">
             <div class="imgcontainer">
               <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <img src="img_avatar2.png" alt="Avatar" class="avatar">
             </div>
 
             <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="emailid"><b>Username</b></label>
+              <input type="text" id="emailid" placeholder="Enter Username" name="emailid" required>
 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="pwd"><b>Password</b></label>
+              <input type="password" id= "pwd" placeholder="Enter Password" name="pwd" required>
 
-              <label for="psw"><b>Confirm Password</b></label>
-              <input type="password" placeholder="Confirm Password" name="cpsw" required>
+              <label for="pwd"><b>Confirm Password</b></label>
+              <input type="password" placeholder="Confirm Password" name="cpwd" required>
         
               <button type="submit">Register</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>
             </div>
-
-            </div>
           </form>
         </div>
-            </div>
+      </div>
 
       <div class="contact container" id="contact">
         <div class="short-contact">
@@ -276,3 +274,4 @@
     </script>
   </body>
 </html>
+
